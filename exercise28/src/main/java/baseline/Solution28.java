@@ -16,6 +16,6 @@ public class Solution28 {
         }
         //print result
         System.out.println(sum);
-
+        
     }
 }
