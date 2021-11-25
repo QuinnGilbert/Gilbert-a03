@@ -1,3 +1,7 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Quinn Gilbert
+ */
 package baseline;
 
 import org.junit.jupiter.api.Test;
@@ -6,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Solution27Test {
     @Test
-    public void testAll(){
+    void testAll(){
         assertTrue(Solution27.checkFirstName("J"));
         assertFalse(Solution27.checkLastName(""));
         assertFalse(Solution27.checkFirstNameLength("J"));

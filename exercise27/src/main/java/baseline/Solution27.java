@@ -1,6 +1,6 @@
 /*
  *  UCF COP3330 Fall 2021 Assignment 3 Solutions
- *  Copyright 2021 first_name last_name
+ *  Copyright 2021 Quinn Gilbert
  */
 package baseline;
 import java.util.*;
@@ -71,14 +71,14 @@ public class Solution27 {
         //return true if longer than 2
         return last.length()>=2;
     }
-    static boolean checkID(String ID){
+    static boolean checkID(String id){
         //return true if in format AA-1234
-        if(ID.length()!=7)return false;
-        if(!(ID.charAt(0)>='A'&&ID.charAt(0)<='Z'||ID.charAt(0)<='z'&&ID.charAt(0)>='a')) return false;
-        if(!(ID.charAt(1)>='A'&&ID.charAt(1)<='Z'||ID.charAt(1)<='z'&&ID.charAt(1)>='a')) return false;
-        if(ID.charAt(2)!='-')return false;
+        if(id.length()!=7)return false;
+        if(!(id.charAt(0)>='A'&&id.charAt(0)<='Z'||id.charAt(0)<='z'&&id.charAt(0)>='a')) return false;
+        if(!(id.charAt(1)>='A'&&id.charAt(1)<='Z'||id.charAt(1)<='z'&&id.charAt(1)>='a')) return false;
+        if(id.charAt(2)!='-')return false;
         for(int i=3;i<=6;i++){
-           if(ID.charAt(i)<'0'||ID.charAt(i)>'9')return false;
+           if(id.charAt(i)<'0'||id.charAt(i)>'9')return false;
         }
         return true;
     }
