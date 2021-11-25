@@ -11,14 +11,14 @@ public class Solution25 {
         System.out.print("Input your password: ");
         String password = in.next();
         //get value from interpreter
-        int strength_value = passwordValidator(password);
+        int strengthValue = passwordValidator(password);
         //interpret value
         String strength = "";
-        if(strength_value==0)strength = "very weak password.";
-        if(strength_value==1)strength = "weak password.";
-        if(strength_value==2)strength = "strong password.";
-        if(strength_value==3)strength = "very strong password.";
-        if(strength_value==-1)strength = "password of unknown strength";
+        if(strengthValue==0)strength = "very weak password.";
+        if(strengthValue==1)strength = "weak password.";
+        if(strengthValue==2)strength = "strong password.";
+        if(strengthValue==3)strength = "very strong password.";
+        if(strengthValue==-1)strength = "password of unknown strength";
         //print result
         System.out.println("The password \""+password+"\" is a "+strength);
     }
@@ -37,6 +37,11 @@ public class Solution25 {
                 special = true;
             }
         }
+        //call in other function to reduce cognitive complexity
+        return getValue(s,numbers,letters,special);
+    }
+
+    static int getValue(String s,int numbers, int letters, boolean special){
         //return 0 for weak and 3 for very strong
         if(numbers==s.length()&&s.length()<8){
             return 0;
@@ -47,12 +52,11 @@ public class Solution25 {
         if(letters>0&&numbers>0&&s.length()>=8&&!special){
             return 2;
         }
-        if(letters>0&&numbers>0&&s.length()>=8&&special){
+        if(letters>0&&numbers>0&&s.length()>=8){
             return 3;
         }
         //return -1 for other
         return -1;
-
     }
 
 }
