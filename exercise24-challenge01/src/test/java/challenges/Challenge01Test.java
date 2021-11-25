@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Challenge01Test {
     @Test
-    public void testAnagram(){
+    void testAnagram(){
         assertTrue(Challenge01.isAnagram("note","tone"));
         assertFalse(Challenge01.isAnagram("other","rather"));
     }
