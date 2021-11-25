@@ -1,13 +1,17 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 3 Solutions
+ *  Copyright 2021 Quinn Gilbert
+ */
 package baseline;
 
 public class PaymentCalculator {
     double balance;
-    double APR;
+    double apr;
     double monthlyPayment;
 
-    PaymentCalculator(double balance, double APR, double monthlyPayment){
+    PaymentCalculator(double balance, double apr, double monthlyPayment){
         this.balance=balance;
-        this.APR = APR;
+        this.apr = apr;
         this.monthlyPayment=monthlyPayment;
     }
 
@@ -15,9 +19,9 @@ public class PaymentCalculator {
     public int  calculateMonthsUntilPaidOff(){
         //use function to calculate months
         //round up fractions of a cent
-        double dailyAPR = Math.ceil(APR/365*100)/100.0;
-        double months = -(1/30.0) * (Math.log(1+balance/monthlyPayment*(1-Math.pow((1+dailyAPR),30)))/Math.log(1+dailyAPR));
-        //round up to nearest month
+        double dailyAPR = apr/365;
+        double months = -(1d/30) * (Math.log(1+balance/monthlyPayment*(1-Math.pow((1+dailyAPR),30) ))/Math.log(1+dailyAPR));
+        //round up to the nearest month
         return (int)Math.ceil(months);
     }
 }
