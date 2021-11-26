@@ -7,16 +7,22 @@ import java.util.*;
 public class Solution33 {
 
     public static void main(String[] args) {
-        //create array
         //prompt question and wait for input
-        //get random response
-        //output response
+        Scanner in = new Scanner(System.in);
+        System.out.print("What is your question?\n>");
+        in.nextLine();
+        //get and output random response
+        System.out.println(getResponse());
     }
 
+    static Random random = new Random();
     static String getResponse(){
         //store responses
+        String[] responses = {"Yes","No","Maybe","Ask again later."};
         //get random number
+        int index = random.nextInt(responses.length);
         //return corresponding response
+        return responses[index];
     }
 
 }
